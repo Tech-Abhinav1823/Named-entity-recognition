@@ -1,8 +1,13 @@
 from huggingface_hub import InferenceClient
+from dotenv import load_dotenv
+import os
+
+# .env file load karo
+load_dotenv()
 
 def extract_entities(text):
     client = InferenceClient(
-        api_key="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"
+        api_key=os.getenv("HF_API_KEY")  # .env se key le raha hai
     )
     
     try:
@@ -11,10 +16,9 @@ def extract_entities(text):
             model="dslim/bert-base-NER"
         )
         
-        # Convert the result to the format expected by the template
         entities = []
         for item in result:
-            if item.entity_group:  # Only include items with entity labels
+            if item.entity_group:
                 entities.append({
                     'text': item.word,
                     'label': item.entity_group,
@@ -26,4 +30,3 @@ def extract_entities(text):
         return entities
     except Exception as e:
         return [{"error": str(e)}]
-
