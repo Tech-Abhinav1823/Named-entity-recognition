@@ -1,0 +1,309 @@
+/* Pretty CSS with colors - No extra effects */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  border: 2px solid #dee2e6;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+h2 {
+  color: #34495e;
+  margin: 20px 0 15px 0;
+  font-size: 22px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 8px;
+}
+
+h3 {
+  color: #2c3e50;
+  margin: 15px 0 10px 0;
+  font-size: 18px;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Forms */
+form {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  padding: 25px;
+  border-radius: 12px;
+  border: 2px solid #dee2e6;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.3);
+  transform: translateY(-2px);
+}
+
+textarea {
+  height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+input[type="submit"] {
+  background: linear-gradient(145deg, #4caf50, #45a049);
+  color: white;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+}
+
+input[type="submit"]:hover {
+  background: linear-gradient(145deg, #45a049, #3d8b40);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+}
+
+input[type="submit"]:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Buttons and links */
+.button-link {
+  display: inline-block;
+  background: linear-gradient(145deg, #008cba, #007b9a);
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  margin: 8px;
+  text-align: center;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 140, 186, 0.2);
+}
+
+.button-link:hover {
+  background: linear-gradient(145deg, #007b9a, #006a8a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 140, 186, 0.3);
+}
+
+.button-link:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 140, 186, 0.2);
+}
+
+/* Messages */
+.message {
+  background: linear-gradient(145deg, #d4edda, #c3e6cb);
+  color: #155724;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #c3e6cb;
+  margin: 15px 0;
+}
+
+.error-message {
+  background: linear-gradient(145deg, #f8d7da, #f5c6cb);
+  color: #721c24;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #f5c6cb;
+  margin: 15px 0;
+}
+
+/* Welcome message */
+.welcome-message {
+  background: linear-gradient(145deg, #d1ecf1, #bee5eb);
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 5px solid #17a2b8;
+  margin: 20px 0;
+}
+
+.welcome-message p {
+  color: #0c5460;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+/* Feature grid */
+.feature-grid {
+  margin: 25px 0;
+}
+
+.feature-card {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #dee2e6;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.feature-card p {
+  margin-bottom: 15px;
+  color: #666;
+}
+
+/* Entity display */
+.entities-container {
+  margin: 25px 0;
+}
+
+.entity-card {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  padding: 18px;
+  border-radius: 12px;
+  border: 2px solid #dee2e6;
+  margin: 12px 0;
+  transition: all 0.3s ease;
+}
+
+.entity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.entity-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.entity-text {
+  background: linear-gradient(145deg, #9c27b0, #8e24aa);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.entity-label {
+  background: linear-gradient(145deg, #2196f3, #1976d2);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.entity-score {
+  background: linear-gradient(145deg, #ff9800, #f57c00);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Navigation */
+.navigation-buttons {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #dee2e6;
+}
+
+.back-link a {
+  color: #008cba;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #006a8a;
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .container {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .entity-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}

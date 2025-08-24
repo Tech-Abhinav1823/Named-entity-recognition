@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NER Tool</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Named Entity Recognition</h1>
+
+      {% if message %}
+      <p class="message">{{ message }}</p>
+      {% endif %}
+
+      <form action="/perform_ner" method="POST">
+        <label for="nertext">Enter your text here:</label>
+        <textarea
+          id="nertext"
+          name="nertext"
+          rows="6"
+          placeholder="Type or paste your text here to analyze..."
+        >
+{{ original_text or '' }}</textarea
+        >
+        <input type="submit" value="Analyze Text" />
+      </form>
+
+      {% if entities %} {% if entities[0].error %}
+      <div class="error-message">
+        <h2>Error occurred:</h2>
+        <p>{{ entities[0].error }}</p>
+      </div>
+      {% else %}
+      <h2>Extracted Entities ({{ entities|length }}):</h2>
+      <div class="entities-container">
+        {% for entity in entities %}
+        <div class="entity-card">
+          <div class="entity-content">
+            <span class="entity-text">{{ entity.text }}</span>
+            <span class="entity-label">{{ entity.label }}</span>
+            <span class="entity-score"
+              >Confidence: {{ "%.1f"|format(entity.score * 100) }}%</span
+            >
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %} {% endif %}
+
+      <div class="navigation-buttons">
+        <a href="/profile" class="button-link">Back to Profile</a>
+      </div>
+
+      <p class="back-link"><a href="/logout">Logout</a></p>
+    </div>
+  </body>
+</html>
