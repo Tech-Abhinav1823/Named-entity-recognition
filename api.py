@@ -2,8 +2,11 @@ from huggingface_hub import InferenceClient
 import os
 
 def extract_entities(text):
-    # Use environment variable directly, or fallback to hardcoded key
-    api_key = os.getenv("HF_API_KEY", "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")
+    # Get API key from environment variable for security
+    api_key = os.getenv("HF_API_KEY")
+    
+    if not api_key:
+        return [{"error": "API key not configured. Please set HF_API_KEY environment variable."}]
     
     client = InferenceClient(api_key=api_key)
     

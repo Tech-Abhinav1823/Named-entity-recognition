@@ -11,3 +11,5 @@ services:
         value: production
       - key: FLASK_DEBUG
         value: false
+      - key: HF_API_KEY
+        value: hf_RAJxCJXSvqaHSWEpjHAntUtXrUSgTxrCZsadd
