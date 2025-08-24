@@ -1,2 +1,4 @@
 Flask==2.3.3
 huggingface_hub
+gunicorn==21.2.0
+Flask==3.0.3
