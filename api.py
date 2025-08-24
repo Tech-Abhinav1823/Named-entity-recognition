@@ -1,14 +1,11 @@
 from huggingface_hub import InferenceClient
-from dotenv import load_dotenv
 import os
 
-# .env file load karo
-load_dotenv()
-
 def extract_entities(text):
-    client = InferenceClient(
-        api_key=os.getenv("HF_API_KEY")  # .env se key le raha hai
-    )
+    # Use environment variable directly, or fallback to hardcoded key
+    api_key = os.getenv("HF_API_KEY", "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")
+    
+    client = InferenceClient(api_key=api_key)
     
     try:
         result = client.token_classification(
