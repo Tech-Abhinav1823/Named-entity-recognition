@@ -84,8 +84,12 @@ def perform_ner():
     if not text:
         return render_template('ner.html', message="Please enter some text to analyze.")
         
-    result = extract_entities(text)
-    return render_template('ner.html', entities=result, original_text=text)
+    try:
+        result = extract_entities(text)
+        return render_template('ner.html', entities=result, original_text=text)
+    except ValueError as e:
+        # This will catch the missing API token error and display it nicely.
+        return render_template('ner.html', message=f"An API configuration error occurred: {e}")
 
 @app.route('/logout')
 def logout():
