@@ -15,6 +15,37 @@ A very basic Flask web application that provides user registration and login fun
 2. **View your profile** after successful login
 3. **Logout** when you're done
 
+## Environment variables
+
+Create a `.env` file (do not commit it) with:
+
+```
+FLASK_SECRET_KEY=change-this-to-a-random-long-string
+HUGGINGFACEHUB_API_TOKEN=your_hf_token_here
+# Optional overrides for local/dev
+FLASK_HOST=0.0.0.0
+FLASK_PORT=5000
+FLASK_DEBUG=True
+```
+
+An example is provided in `env.example`.
+
+## Running locally
+
+```
+pip install -r requirements.txt
+python app.py
+```
+
+## Deploying
+
+- Use `gunicorn` in production. A `Procfile` is included for platforms like Heroku/Render:
+
+```
+web: gunicorn app:app
+```
+
+- Ensure you set `FLASK_SECRET_KEY` and `HUGGINGFACEHUB_API_TOKEN` in platform environment settings.
 
 ## Technologies Used
 

@@ -2,12 +2,16 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from db import Database
 from api import extract_entities
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env if present
+load_dotenv()
 
 app = Flask(__name__)
 
 # A secret key is required for session management.
-# In a production environment, use a more complex, securely stored key.
-app.secret_key = os.urandom(24)
+# Read from environment; fall back to a random key (non-persistent) for local dev only.
+app.secret_key = os.getenv('FLASK_SECRET_KEY') or os.urandom(24)
 
 dbo = Database()
 
@@ -90,4 +94,7 @@ def logout():
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    host = os.getenv('FLASK_HOST', '0.0.0.0')
+    port = int(os.getenv('FLASK_PORT', '5000'))
+    debug = os.getenv('FLASK_DEBUG', 'True').lower() in ('1', 'true', 'yes', 'on')
+    app.run(host=host, port=port, debug=debug)

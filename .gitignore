@@ -1,3 +1,13 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+env/
+venv/
+.venv/
+instance/
+user.json
 # Python cache
 __pycache__/
 *.pyc
