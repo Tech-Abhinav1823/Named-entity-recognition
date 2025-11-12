@@ -67,7 +67,7 @@ This project demonstrates:
 
 ## Perfect For
 
-- Beginner Python developers
+- Beginner Python developersf
 - Learning Flask basics
 - Understanding web authentication
 - Simple project portfolio
